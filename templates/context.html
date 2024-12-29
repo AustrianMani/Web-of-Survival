@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kontext erstellen</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Kontext für {{ players[0] }}</h1>
+    <p>Antwort: "{{ answers[players[0]] }}"</p>
+    <form action="/submit_context" method="POST">
+        <input type="hidden" name="player" value="{{ players[0] }}">
+        <label for="context">Neuer Kontext:</label><br>
+        <input type="text" id="context" name="context" required><br><br>
+        <button type="submit">Kontext senden</button>
+    </form>
+</body>
+</html>

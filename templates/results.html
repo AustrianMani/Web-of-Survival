@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ergebnisse</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Ergebnisse</h1>
+    <ul>
+        {% for player, score in scores.items() %}
+        <li>{{ player }}: {{ score }} Stimme(n)</li>
+        {% endfor %}
+    </ul>
+    <h2>Gewinner: {{ winner }}</h2>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abstimmung</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Abstimmung</h1>
+    <form action="/submit_vote" method="POST">
+        {% for player, context in contexts.items() %}
+        <div>
+            <input type="radio" id="{{ player }}" name="voted_player" value="{{ player }}" required>
+            <label for="{{ player }}">{{ context }} (von {{ player }})</label>
+        </div>
+        {% endfor %}
+        <br>
+        <button type="submit">Abstimmung senden</button>
+    </form>
+</body>
+</html>
