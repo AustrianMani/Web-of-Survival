@@ -60,6 +60,5 @@ def results():
     winner = max(game["scores"], key=game["scores"].get)
     return render_template('results.html', scores=game["scores"], winner=winner)
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+if __name__ == '__main__':
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
